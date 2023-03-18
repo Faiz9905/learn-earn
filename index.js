@@ -4,7 +4,7 @@ const bodyparser = require('body-parser');
 const passport = require('passport');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //bring all routes
 const auth = require('./routes/api/auth');
