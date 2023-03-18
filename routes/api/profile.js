@@ -77,7 +77,7 @@ router.get('/:username', (req, res) => {
     if(!profile){
       res.status({"usernamenotfound" : "user name not found"});
     }
-    res.json(profile);
+    res.json({"profile" : profile});
   }).catch(err => console.log(err))
 })
 module.exports = router;

@@ -3,6 +3,19 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const passport = require('passport');
 
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -12,6 +25,7 @@ const profile = require('./routes/api/profile')
 const feed = require('./routes/api/feed');
 
 // // Middleware for body-parser
+app.use(cors(corsOpts));
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
