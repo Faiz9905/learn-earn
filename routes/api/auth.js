@@ -7,7 +7,7 @@ const key = require("../../setup/myurl");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.json({ tex: "abc" });
+  res.json({ tex: "test" });
 });
 
 // import schema
@@ -72,8 +72,8 @@ router.post('/login', (req, res) => {
             return res.status(400).json({passworerror : "password incorrect"})
         }
     })
-    .catch(err => console.log(err))  
-    
+    .catch(err => console.log(err))
+
    }).catch(err => console.log(err))
 })
 
