@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const passport = require('passport');
 const cors = require('cors')
-const session = require('express-session')
 const corsOpts = {
   origin: '*',
 
@@ -33,7 +32,6 @@ app.use(bodyparser.json());
 //Passport middleware
 app.use(passport.initialize());
 
-app.use(passport.authenticate('session'));
 
 
 //Config for JWT strategy
