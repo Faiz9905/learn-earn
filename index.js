@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const passport = require('passport');
 const cors = require('cors')
-
 const corsOpts = {
   origin: '*',
 
@@ -25,7 +24,7 @@ const auth = require('./routes/api/auth');
 const profile = require('./routes/api/profile')
 const feed = require('./routes/api/feed');
 
-// // Middleware for body-parser
+//Middleware
 app.use(cors(corsOpts));
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
@@ -33,12 +32,15 @@ app.use(bodyparser.json());
 //Passport middleware
 app.use(passport.initialize());
 
+app.use(passport.session());
+
+
 //Config for JWT strategy
 require("./strategies/jsonwtStrategy")(passport);
 
 // test route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("welcome World");
 });
 
 app.use('/api/auth', auth);
