@@ -33,17 +33,17 @@ app.use(bodyparser.json());
 //Passport middleware
 app.use(passport.initialize());
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 //Config for JWT strategy
 require("./strategies/jsonwtStrategy")(passport);
 
 // test route
 app.get("/", (req, res) => {
-  res.send("welcome World...");
+  res.send("welcome World!");
 });
 
 app.use('/api/auth', auth);
