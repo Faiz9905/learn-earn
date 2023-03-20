@@ -91,8 +91,4 @@ router.get('/profile', passport.authenticate('jwt', { session: false }),
           // console.log(req.user)
     }
 );
-
-
-
-
 module.exports = router;

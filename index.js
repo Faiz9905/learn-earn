@@ -13,6 +13,7 @@ const corsOpts = {
 
   allowedHeaders: [
     'Content-Type',
+    'Access-Control-Allow-Origin'
   ],
 };
 
@@ -32,7 +33,10 @@ app.use(bodyparser.json());
 //Passport middleware
 app.use(passport.initialize());
 
-
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
 
 //Config for JWT strategy
 require("./strategies/jsonwtStrategy")(passport);
