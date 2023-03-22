@@ -41,7 +41,7 @@ require("./strategies/jsonwtStrategy")(passport);
 
 // test route
 app.get("/", (req, res) => {
-  res.send("welcome to Wonder laa!");
+  res.send("welcome to Wonder laaaa...!");
 });
 
 app.use('/api/auth', auth);
