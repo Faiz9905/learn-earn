@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 const passport = require('passport');
 const cors = require('cors')
 const corsOpts = {
+
   origin: '*',
 
   methods: [
@@ -41,7 +42,7 @@ require("./strategies/jsonwtStrategy")(passport);
 
 // test route
 app.get("/", (req, res) => {
-  res.send("welcome to Wonder laaaa...!");
+  res.send("welcome to Wonde!");
 });
 
 app.use('/api/auth', auth);

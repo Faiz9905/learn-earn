@@ -77,12 +77,6 @@ router.post('/login', (req, res) => {
    }).catch(err => console.log(err))
 });
 
-app.post('/logout', function(req, res, next){
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
-});
 
 router.get('/profile', passport.authenticate('jwt', { session: false }),
     function(req, res) {
