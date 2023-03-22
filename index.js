@@ -13,7 +13,9 @@ const corsOpts = {
 
   allowedHeaders: [
     'Content-Type',
-    'Access-Control-Allow-Origin'
+    'Access-Control-Allow-Origin',
+    'Access-Control-Allow-Headers',
+    'Access-Control-Request-Headers'
   ],
 };
 
@@ -46,12 +48,7 @@ app.use('/api/auth', auth);
 app.use('/api/feed', feed);
 app.use('/api/profile', profile);
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
+
 
 // Mongo Db config
 const db = require('./setup/myurl').mongoURL;
