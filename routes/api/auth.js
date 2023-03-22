@@ -77,9 +77,9 @@ router.post('/login', (req, res) => {
    }).catch(err => console.log(err))
 });
 
-router.post('/logout', function(req, res, next){
+router.post('/logout', function(req, res){
   req.logout(function(err) {
-    if (err) { return next(err); }
+    if (err) { return (err); }
     res.redirect('/');
   });
 });
