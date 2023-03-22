@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   res.json({ tex: "test" });
 });
 
-// import schema
+//import schema
 const Person = require("../../models/Person");
 
 router.post("/register", (req, res) => {
@@ -75,7 +75,7 @@ router.post('/login', (req, res) => {
     .catch(err => console.log(err))
 
    }).catch(err => console.log(err))
-})
+});
 
 router.get('/profile', passport.authenticate('jwt', { session: false }),
     function(req, res) {
@@ -88,7 +88,7 @@ router.get('/profile', passport.authenticate('jwt', { session: false }),
             dp : genderPic,
             date: req.user.date
           });
-          // console.log(req.user)
     }
 );
+
 module.exports = router;
